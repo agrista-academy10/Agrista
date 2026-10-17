@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AgriSta | اجريستا للتدريب والاستشارات الزراعية</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7f3;--fg:#0b2721;--card:#fff;--muted:#5b6f69;--line:#dfe8e2;--acc:#d4ec7f;--g:#236e5f;--pill:#236e5f;--dark:#0b2721;color-scheme:light;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1a16;--fg:#e8f1ec;--card:#12251f;--muted:#9bb2aa;--line:#21382f;--pill:#8fce8b;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Cairo,Tahoma,sans-serif;background:var(--bg);color:var(--fg);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.w{max-width:1080px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--dark);color:#fff}
+.hb{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0}
+.hb .logo{font-size:22px;font-weight:800;color:var(--acc)}
+nav{display:flex;gap:18px;overflow-x:auto;padding:0 0 8px;font-size:14px;white-space:nowrap}
+nav a{opacity:.8}nav a.on{opacity:1;color:var(--acc);font-weight:600}
+.btn{display:inline-block;background:var(--acc);color:#0b2721;font-weight:800;padding:10px 20px;border-radius:12px;font-size:15px;border:0;font-family:inherit;cursor:pointer;text-align:center}
+.btn.o{background:transparent;color:#fff;border:1px solid #ffffff55}
+.btn.d{background:var(--dark);color:#fff}
+.btn.danger{background:#e74c3c;color:#fff}
+.hero{background:linear-gradient(160deg,#0b2721,#164a3c);color:#fff;padding:54px 0 48px}
+.hero small{color:var(--acc);font-weight:600}
+.hero h1{font-size:clamp(27px,6vw,44px);line-height:1.3;margin:6px 0 14px;font-weight:800}
+.hero h1 em{color:var(--acc);font-style:normal}
+.hero p{max-width:580px;opacity:.88;margin:0 0 22px}
+.hero .btn{margin:0 0 8px 8px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:26px}
+.stats div{background:#ffffff14;border-radius:14px;padding:10px 14px;font-size:13.5px}
+.stats b{display:block;color:var(--acc);font-size:15.5px}
+section{padding:40px 0}
+section.alt{background:var(--card)}
+h2{font-size:clamp(22px,4.5vw,30px);margin:0 0 6px;line-height:1.4}
+h2 em{color:var(--g);font-style:normal}
+.sub{color:var(--muted);margin:0 0 22px;max-width:640px}
+.kick{font-size:13px;color:var(--pill);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+section.alt .box{background:var(--bg)}
+.box b{display:block;margin-bottom:2px}
+.box small,.box p{color:var(--muted);margin:0;font-size:14px}
+.num{color:var(--pill);font-weight:800;font-size:13px;display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+.cv{height:96px;background:linear-gradient(135deg,var(--g),#8fce8b)}
+.cb{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pill{align-self:flex-start;font-size:12px;background:#8fce8b33;color:var(--pill);padding:2px 10px;border-radius:99px;font-weight:600}
+.card h3{font-size:17px;margin:0;line-height:1.5}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:12.5px;border:1px solid var(--line);border-radius:8px;padding:2px 8px}
+.start{font-size:13px;color:var(--muted)}
+.card .btn{margin-top:auto}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:10px}
+summary{font-weight:600;cursor:pointer}
+details p{margin:8px 0 0;color:var(--muted)}
+.cta{background:var(--dark);color:#fff;text-align:center;border-radius:22px;padding:36px 18px}
+.cta h2{margin-bottom:8px}.cta p{opacity:.85;margin:0 auto 16px;max-width:520px}
+.cta h2 em{color:var(--acc)}
+.cta .btn{margin:0 4px 6px}
+form{display:grid;gap:10px;max-width:560px}
+label{font-size:14px;font-weight:600}
+input,select,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+footer{background:var(--dark);color:#ffffffcc;padding:30px 0 20px;font-size:14px}
+footer .two{margin-bottom:14px}
+footer h4{color:#fff;margin:0 0 6px}
+footer a{display:block;color:var(--acc);margin-bottom:2px}
+.cp{text-align:center;border-top:1px solid #ffffff22;padding-top:12px;font-size:13px}
+</style>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, addDoc, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCQbbLpU3ttuPJKaJRYAzLdD-eKWj3EeGY",
+  authDomain: "agrista-958db.firebaseapp.com",
+  databaseURL: "https://agrista-958db-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "agrista-958db",
+  storageBucket: "agrista-958db.firebasestorage.app",
+  messagingSenderId: "731610265836",
+  appId: "1:731610265836:web:9af2a0a496d9932b12cdc9",
+  measurementId: "G-FT0BYQ48S6"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+window._fb = { auth, db, signInWithEmailAndPassword, signOut, onAuthStateChanged, collection, getDocs, addDoc, doc, updateDoc, deleteDoc };
+window.dispatchEvent(new Event("firebase-ready"));
+</script>
+</head>
+<body>
+
+<header><div class="w">
+<div class="hb">
+  <a href="#/" class="logo">AgriSta</a>
+  <a class="btn wa" target="_blank" data-m="مرحباً أريد معرفة المسار الأنسب لي">تواصل عبر واتساب</a>
+</div>
+<nav id="nav">
+  <a href="#/">الرئيسية</a>
+  <a href="#/programs">البرامج التدريبية</a>
+  <a href="#/consulting">الاستشارات</a>
+  <a href="#/about">عن AgriSta</a>
+  <a href="#/contact">تواصل معنا</a>
+</nav>
+</div></header>
+
+<main id="app"></main>
+
+<footer><div class="w">
+<div class="two">
+  <div><h4>AgriSta</h4><p>تدريب واستشارات متخصصة تجمع بين المعرفة العلمية والتطبيق العملي لدعم الأفراد والمؤسسات والمستثمرين.</p></div>
+  <div><h4>تواصل معنا</h4><a href="https://wa.me/201220661795" target="_blank">واتساب 01220661795</a><p>البريد: agrista494@gmail.com</p></div>
+</div>
+<div class="cp">© 2026 اجريستا للتدريب والاستشارات. جميع الحقوق محفوظة.</div>
+</div></footer>
+
+<script>
+const WA="201220661795";
+const wl=m=>"https://wa.me/"+WA+"?text="+encodeURIComponent(m);
+const B=(t,m,c="")=>`<a class="btn ${c}" target="_blank" href="${wl(m)}">${t}</a>`;
+const H=(t,s)=>`<h2>${t}</h2>${s?`<p class="sub">${s}</p>`:""}`;
+const S=(x,c="")=>`<section class="${c}"><div class="w">${x}</div></section>`;
+const grid=a=>`<div class="grid">${a.join("")}</div>`;
+const hero=(k,t,p,b,x="")=>`<div class="hero"><div class="w"><small>${k}</small><h1>${t}</h1><p>${p}</p>${b}${x}</div></div>`;
+const cta=(t,p,b)=>S(`<div class="cta"><h2>${t}</h2><p>${p}</p>${b}</div>`);
+const nx=()=>cta("ابدأ بخطوة أوضح <em>لمشروعك أو مسارك المهني</em>","استفسر عن برنامج تدريبي أو خدمة استشارية، وسيساعدك فريقنا على الاختيار.",B("تحدث مع مستشار","مرحباً أريد التواصل")+` <a class="btn o" href="#/programs">استكشف البرامج</a>`);
+
+let CURRENT_USER = null;
+let PROGS = [];
+
+const esc=x=>String(x==null?"":x).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pcard=p=>`<article class="card"><div class="cv"></div><div class="cb"><span class="pill">${esc(p.c)}</span><h3>${esc(p.t)}</h3><p>${esc(p.nb)}</p><div class="chips">${[p.m&&"المدة: "+p.m,p.n&&p.n+" محاضرة",p.r&&"المحاضر: "+p.r].filter(Boolean).map(x=>`<span>${esc(x)}</span>`).join("")}</div>${p.d?`<details><summary>المحتوى التدريبي</summary><p style="white-space:pre-line">${esc(p.d)}</p></details>`:""}<div class="start">موعد البداية: ${esc(p.s||"يحدد عند اكتمال العدد")}</div><a class="btn d" target="_blank" href="${wl("مرحباً أريد الاستفسار عن كورس: "+p.t)}">اسأل وسجّل عبر واتساب</a></div></article>`;
+
+const FIELDS=["الزراعة والإنتاج النباتي","المبيدات والمكافحة الزراعية","النباتات الطبية والعطرية","الإنتاج الحيواني","إنتاج الدواجن","تربية النحل","جودة وسلامة الغذاء","تنسيق المواقع وتصميم الحدائق","إدارة المشروعات ودراسة الجدوى","التسويق والمبيعات وتطوير الأعمال"];
+
+async function loadPrograms() {
+  if (!window._fb) return;
+  try {
+    const snap = await window._fb.getDocs(window._fb.collection(window._fb.db, "programs"));
+    PROGS = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    go();
+  } catch (err) {
+    console.error("خطأ في جلب الكورسات:", err);
+  }
+}
+
+const P = {
+"/": () =>
+hero("اجريستا للتدريب والاستشارات","معرفة عملية تبني <em>كفاءات أقوى</em> ومشروعات أكثر استدامة","برامج تدريبية متخصصة تجمع بين العلم والتطبيق العملي.",`<a class="btn" href="#/programs">استكشف البرامج</a>`+B("تحدث مع مستشار","مرحباً أريد استشارة","o"))
++S(`<span class="kick">برامج مختارة</span>`+H("تعلم ما يمكنك <em>تطبيقه غداً</em>")+ (PROGS.length ? grid(PROGS.slice(0,3).map(pcard)) : "<p style='color:var(--muted)'>لا توجد برامج مضافة بعد.</p>") +`<p style="margin-top:16px"><a class="btn d" href="#/programs">عرض جميع البرامج ←</a></p>`)
++nx(),
+
+"/programs": () =>
+hero("البرامج التدريبية","تعلم ما يمكنك <em>تطبيقه غداً</em>","برامج عربية متخصصة ومحدثة باستمرار.")
++S(H("جميع البرامج التدريبية")+ (PROGS.length ? grid(PROGS.map(pcard)) : "<p style='color:var(--muted)'>لا توجد برامج مضافة بعد.</p>"))
++nx(),
+
+"/consulting": () =>
+hero("استشارات AgriSta","قرارات أوضح لمشروعات أكثر قدرة على النمو","دعم فني واستثماري متخصص.",B("تحدث مع مستشار","مرحباً أريد استشارة"))
++nx(),
+
+"/about": () =>
+hero("عن AgriSta","نبني معرفة <em>أقرب إلى الواقع</em> وتتحول إلى تطبيق.","نساعد الأفراد والشركات على اتخاذ قرارات كفؤة وبناء مشروعات مستدامة.",B("تحدث معنا","مرحباً أريد التواصل"))
++nx(),
+
+"/contact": () =>
+hero("تواصل معنا","ابدأ بالسؤال. <em>ونساعدك في تحديد المسار.</em>","تواصل مباشرة وسيرد عليك الفريق المختص.")
++S(`<form id="cf"><div><label>الاسم</label><input name="n" required></div><div><label>رقم الموبايل</label><input name="p" type="tel" required></div><div><label>الرسالة</label><textarea name="m" rows="4" required></textarea></div><button class="btn d" type="submit">إرسال عبر واتساب</button></form>`),
+
+"/admin": () => {
+  if (!CURRENT_USER) {
+    return S(H("تسجيل دخول المشرفين","هذه الصفحة للإدارة فقط. الرجاء إدخال البيانات المعتمدة.")+`
+    <form id="lf">
+      <div><label>البريد الإلكتروني</label><input type="email" id="l_email" required></div>
+      <div><label>كلمة المرور</label><input type="password" id="l_pass" required></div>
+      <button class="btn d" type="submit">تسجيل الدخول</button>
+      <p id="l_msg" style="color:red;margin-top:8px;"></p>
+    </form>`);
+  }
+
+  return S(H("لوحة الإدارة السريّة","أهلاً بكِ! يمكنكِ الآن إدارة البرامج التدريبية بكل سهولة.")+`
+  <div style="margin-bottom:20px;">
+    <button class="btn danger" id="logoutBtn">تسجيل الخروج</button>
+  </div>
+  <h3>الكورسات الحالية (${PROGS.length})</h3>
+  <div class="grid" style="margin-bottom:30px;">
+    ${PROGS.map(p => `
+      <div class="box">
+        <b>${esc(p.t)}</b>
+        <small>${esc(p.c)} - مدة: ${esc(p.m || "غير محددة")}</small>
+        <p style="margin-top:10px;">
+          <button class="btn danger" onclick="deleteProgram('${p.id}')">حذف الكورس</button>
+        </p>
+      </div>
+    `).join("")}
+  </div>
+
+  <h3 id="formTitle">إضافة كورس / برنامج جديد</h3>
+  <form id="addForm">
+    <div><label>اسم الكورس *</label><input name="t" required></div>
+    <div><label>المجال / التخصص *</label><select name="c">${FIELDS.map(f=>`<option>${f}</option>`).join("")}</select></div>
+    <div><label>نبذة سريعة ومختصرة *</label><textarea name="nb" rows="2" required></textarea></div>
+    <div><label>المحتوى والوصف بالتفصيل</label><textarea name="d" rows="4"></textarea></div>
+    <div><label>المدة (مثال: 4 أسابيع)</label><input name="m"></div>
+    <div><label>عدد المحاضرات</label><input name="n"></div>
+    <div><label>اسم المحاضر</label><input name="r"></div>
+    <div><label>موعد البداية المتوقع</label><input name="s" placeholder="مثال: 15 مارس"></div>
+    <button class="btn d" type="submit">حفظ ونشر على الموقع</button>
+    <p id="admStatus" style="color:green;font-weight:bold;margin-top:8px;"></p>
+  </form>
+  `);
+}
+};
+
+window.deleteProgram = async function(id) {
+  if (!confirm("هل أنتِ متأكدة من حذف هذا البرنامج؟")) return;
+  try {
+    await window._fb.deleteDoc(window._fb.doc(window._fb.db, "programs", id));
+    await loadPrograms();
+  } catch (err) {
+    alert("حدث خطأ أثناء الحذف: " + err.message);
+  }
+};
+
+function setupEvents(k) {
+  if (k === "/admin") {
+    const lf = document.getElementById("lf");
+    if (lf) {
+      lf.onsubmit = async e => {
+        e.preventDefault();
+        const em = document.getElementById("l_email").value;
+        const ps = document.getElementById("l_pass").value;
+        const msg = document.getElementById("l_msg");
+        try {
+          msg.textContent = "جاري التحقق...";
+          await window._fb.signInWithEmailAndPassword(window._fb.auth, em, ps);
+        } catch (err) {
+          msg.textContent = "بيانات الدخول غير صحيحة، يرجى التأكد.";
+        }
+      };
+    }
+
+    const lo = document.getElementById("logoutBtn");
+    if (lo) {
+      lo.onclick = () => window._fb.signOut(window._fb.auth);
+    }
+
+    const af = document.getElementById("addForm");
+    if (af) {
+      af.onsubmit = async e => {
+        e.preventDefault();
+        const fd = new FormData(af);
+        const status = document.getElementById("admStatus");
+        status.textContent = "جاري الحفظ في قاعدة البيانات...";
+        try {
+          await window._fb.addDoc(window._fb.collection(window._fb.db, "programs"), {
+            t: fd.get("t").trim(),
+            c: fd.get("c"),
+            nb: fd.get("nb").trim(),
+            d: fd.get("d").trim(),
+            m: fd.get("m").trim(),
+            n: fd.get("n").trim(),
+            r: fd.get("r").trim(),
+            s: fd.get("s").trim(),
+            created_at: new Date()
+          });
+          status.textContent = "تمت إضافة البرنامج بنجاح!";
+          af.reset();
+          await loadPrograms();
+        } catch (err) {
+          status.textContent = "حدث خطأ: " + err.message;
+        }
+      };
+    }
+  }
+
+  const cf = document.getElementById("cf");
+  if (cf) {
+    cf.onsubmit = e => {
+      e.preventDefault();
+      const d = new FormData(cf);
+      window.open(wl(`طلب جديد:\nالاسم: ${d.get("n")}\nالموبايل: ${d.get("p")}\nالرسالة: ${d.get("m")}`), "_blank");
+    };
+  }
+}
+
+function go() {
+  const r = (location.hash || "#/").slice(1) || "/";
+  const k = P[r] ? r : "/";
+  document.getElementById("app").innerHTML = P[k]();
+  setupEvents(k);
+  document.querySelectorAll("#nav a").forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + k));
+  document.querySelectorAll(".wa").forEach(a => a.href = wl(a.dataset.m));
+  window.scrollTo(0,0);
+}
+
+window.addEventListener("firebase-ready", () => {
+  window._fb.onAuthStateChanged(window._fb.auth, user => {
+    CURRENT_USER = user;
+    go();
+  });
+  loadPrograms();
+});
+
+window.addEventListener("hashchange", go);
+go();
+</script>
+</body>
+</html>
